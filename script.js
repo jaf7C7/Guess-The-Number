@@ -28,7 +28,11 @@ const continueToGame = () => {
     /* Creates a global variable */
     playerName = document.getElementById('enter-name').value;
 
-    heading.textContent = `Hey ${playerName}. Guess The Number!`;
+    if (playerName === 'Faye' || playerName === 'faye') {
+        heading.textContent = `Hi Faye, You're cute.`;
+    } else {
+        heading.textContent = `Hey ${playerName}. Guess The Number!`;
+    }
 
     greetPlayer.classList.add('hidden');
     chooseRange.classList.remove('hidden');
@@ -79,8 +83,6 @@ document.getElementById('continue').addEventListener('click', continueToGame);
 /*
  * Second section: Generate a random number in a given range:
  */
-
-document.getElementById('min').focus();
 
 /* Generate Number button */
 document.getElementById('generate-number').addEventListener('click', () => {
